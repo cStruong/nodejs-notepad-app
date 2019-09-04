@@ -1,7 +1,7 @@
 const validator = require('validator');
 const chalk = require('chalk');
 const yargs = require('yargs');
-const getNotes = require('./notes.js');
+const notesFncs = require('./notes.js');
 
 yargs.version('1.1.0')
 
@@ -21,8 +21,7 @@ yargs.command({
         }
     },
     handler: function (argv) {
-        console.log('Post Title: ' + argv.title);
-        console.log('Post Body: ' + argv.body)
+        notesFncs.addNote(argv.title, argv.body);
     }
 })
 
