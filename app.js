@@ -44,7 +44,8 @@ yargs.command({
     command: 'list',
     describe: 'list of all notes',
     handler() {
-        console.log('listing all notes...')
+        console.log(chalk.blue.inverse('listing all notes...'));
+        notesFncs.listNotes();
     }
 })
 
